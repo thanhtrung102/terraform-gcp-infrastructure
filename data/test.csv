@@ -1,0 +1,4 @@
+id,name,email,created_at
+1,Alice Smith,alice@example.com,2025-01-15
+2,Bob Johnson,bob@example.com,2025-01-16
+3,Carol Williams,carol@example.com,2025-01-17

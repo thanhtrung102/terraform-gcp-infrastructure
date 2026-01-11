@@ -1,0 +1,16 @@
+# GCP Project Configuration
+# Copy this file to terraform.tfvars and update the values
+
+# Required: Your GCP project ID
+project_id = "your-gcp-project-id"
+
+# Required: Globally unique bucket name
+storage_bucket_name = "your-unique-bucket-name-12345"
+
+# Optional: Override defaults
+# region                      = "us-central1"
+# environment                 = "dev"
+# bigquery_dataset_id         = "data_warehouse"
+# bigquery_location           = "US"
+# storage_location            = "US"
+# default_table_expiration_ms = 2592000000
