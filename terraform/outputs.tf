@@ -32,3 +32,8 @@ output "storage_bucket_self_link" {
   description = "The Cloud Storage bucket self link"
   value       = google_storage_bucket.data_lake.self_link
 }
+
+output "service_account_email" {
+  description = "The Terraform service account email"
+  value       = "terraform-sa@${var.project_id}.iam.gserviceaccount.com"
+}

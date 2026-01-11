@@ -123,3 +123,28 @@ resource "google_storage_bucket_object" "processed_folder" {
   content = "# Processed data ready for analysis"
   bucket  = google_storage_bucket.data_lake.name
 }
+
+# =============================================================================
+# IAM Bindings (for service account roles)
+# =============================================================================
+
+# BigQuery Admin role for the Terraform service account
+resource "google_project_iam_member" "bigquery_admin" {
+  project = var.project_id
+  role    = "roles/bigquery.admin"
+  member  = "serviceAccount:terraform-sa@${var.project_id}.iam.gserviceaccount.com"
+}
+
+# Storage Admin role for the Terraform service account
+resource "google_project_iam_member" "storage_admin" {
+  project = var.project_id
+  role    = "roles/storage.admin"
+  member  = "serviceAccount:terraform-sa@${var.project_id}.iam.gserviceaccount.com"
+}
+
+# Project Viewer role for the Terraform service account
+resource "google_project_iam_member" "project_viewer" {
+  project = var.project_id
+  role    = "roles/viewer"
+  member  = "serviceAccount:terraform-sa@${var.project_id}.iam.gserviceaccount.com"
+}
